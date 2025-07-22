@@ -4,7 +4,7 @@ import * as path from "path";
 import { parse } from 'csv-parse';
 
 const readCSVData = (req: Request, res: Response) => {
-    const filePath = path.resolve(__dirname, '../../data/AirQualityUCI.csv');
+    const filePath = path.resolve(process.cwd(), 'src/data/AirQualityUCI.csv');
     const fileContent = fs.readFileSync(filePath, { encoding: 'utf-8' });
     parse(fileContent, {
         delimiter: ';',
