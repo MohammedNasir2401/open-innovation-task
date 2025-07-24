@@ -10,7 +10,9 @@ services:
     volumes:
       - ./api:/app
       - /app/node_modules
-    command: npm run dev  
+    command: sh -c "npx prisma migrate deploy && npm run dev"
+    depends_on:
+      - postgres  
 
   dashboard:
     build:
