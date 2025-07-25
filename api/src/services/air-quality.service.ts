@@ -4,6 +4,32 @@ import { parse } from 'csv-parse/sync';
 import { AirQualityRecord } from '../interfaces/air-quality-record';
 import prisma from '../../prisma/client';
 
+
+export async function fetchRecords(metric: string, startDate?: string, endDate?: string) {
+    const whereClause: any = {};
+    if (startDate && endDate) {
+        const startTime = new Date(startDate);
+        const endTime = new Date(endDate);
+        endTime.setHours(23, 59, 59);
+        whereClause.time = {
+            gte: startTime,
+            lte: endTime
+        };
+    }
+    let selectClause: any = {
+        date: true,
+        time: true,
+        [metric]: true,
+    };
+    return prisma.airQualityRecord.findMany({
+        where: whereClause,
+        select: selectClause,
+        orderBy: {
+            time: 'asc',
+        },
+    });
+}
+
 export async function readCSVData() {
     const filePath = path.resolve(process.cwd(), 'src/data/AirQualityUCI.csv');
     const fileContent = await fs.promises.readFile(filePath, { encoding: 'utf-8' });

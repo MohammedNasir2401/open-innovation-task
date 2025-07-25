@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { importAirQualityData } from '../controllers/air-quality.controller';
+import { importAirQualityData, index } from '../controllers/air-quality.controller';
 
 const airQualityRouter = Router();
+airQualityRouter.get('/', index);
 airQualityRouter.get('/import', importAirQualityData);
 export default airQualityRouter;
