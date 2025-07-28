@@ -19,7 +19,13 @@ This project is a mono repo that uses Docker Compose in dev environment
 
 ## Getting Started
 
-### 1. Copy the example env files
+### 1. Open the project root directory
+
+```bash
+cd open-innovation-task
+```
+
+### 2. Copy the example env files
 
 ```bash
 cp .env.example .env
