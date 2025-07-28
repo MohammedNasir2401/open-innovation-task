@@ -93,12 +93,23 @@ export function DailyClimateTable(props: DailyClimateTableProps) {
                 !loading &&
                 (
                     <div className="flex justify-end p-4">
-                        <Pagination
+                        <div className="sm:hidden">
+                            <Pagination
 
-                            currentPage={currentPage}
-                            totalPages={totalPages}
-                            onPageChange={(page) => setCurrentPage(page)}
-                        />
+                                layout="navigation"
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={(page) => setCurrentPage(page)}
+                            />
+                        </div>
+                        <div className="hidden sm:block">
+
+                            <Pagination
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={(page) => setCurrentPage(page)}
+                            />
+                        </div>
                     </div>
                 )
             }
