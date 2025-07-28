@@ -95,7 +95,6 @@ export function DailyClimateTable(props: DailyClimateTableProps) {
                     <div className="flex justify-end p-4">
                         <div className="sm:hidden">
                             <Pagination
-
                                 layout="navigation"
                                 currentPage={currentPage}
                                 totalPages={totalPages}
@@ -103,7 +102,6 @@ export function DailyClimateTable(props: DailyClimateTableProps) {
                             />
                         </div>
                         <div className="hidden sm:block">
-
                             <Pagination
                                 currentPage={currentPage}
                                 totalPages={totalPages}
