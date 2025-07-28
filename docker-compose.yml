@@ -10,7 +10,7 @@ services:
     volumes:
       - ./api:/app
       - /app/node_modules
-    command: sh -c "npx prisma migrate deploy && npm run dev"
+    command: sh -c "npx prisma migrate deploy && npm run import:data && npm run dev"
     depends_on:
       - postgres  
 
@@ -27,11 +27,11 @@ services:
   postgres:
     image: postgres:16
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT}:5432"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: open_innovation
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - pgdata:/var/lib/postgresql/data
 volumes:
