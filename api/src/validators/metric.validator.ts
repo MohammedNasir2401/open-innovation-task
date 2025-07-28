@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 
-export const allowedParams = [
+export const allowedMetrics = [
     "co_gt",
     "pt08_s1_co",
     "nmhc_gt",
@@ -12,15 +12,15 @@ export const allowedParams = [
     "no2_gt",
     "pt08_s4_no2",
     "pt08_s5_o3",
-    "t",
-    "rh",
-    "ah",
+    "temperature",
+    "relative_humidity",
+    "absolute_humidity",
 ];
 const dateFormatRegex = /^\d{4}-\d{2}-\d{2}$/;
 const dateFormatMessage = "Invalid date format, expected yyyy-mm-dd";
 
 export const fetchByMetricValidator = z.object({
-    metric: z.enum(allowedParams),
+    metric: z.enum(allowedMetrics),
     startDate: z.string().regex(dateFormatRegex, { message: dateFormatMessage }).optional(),
     endDate: z.string().regex(dateFormatRegex, { message: dateFormatMessage }).optional(),
 });

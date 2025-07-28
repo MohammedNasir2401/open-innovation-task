@@ -11,17 +11,17 @@ model AirQualityRecord {
   id             Int      @id @default(autoincrement())
   date           DateTime
   time           DateTime
-  co_gt          Float
-  pt08_s1_co     Int
-  nmhc_gt        Int
-  c6h6_gt        Float
-  pt08_s2_nmhc   Int
-  nox_gt         Int
-  pt08_s3_nox    Int
-  no2_gt         Int
-  pt08_s4_no2    Int
-  pt08_s5_o3     Int
-  t              Float
-  rh             Float
-  ah             Float
+  co_gt          Float?
+  pt08_s1_co     Int?
+  nmhc_gt        Int?
+  c6h6_gt        Float?
+  pt08_s2_nmhc   Int?
+  nox_gt         Int?
+  pt08_s3_nox    Int?
+  no2_gt         Int?
+  pt08_s4_no2    Int?
+  pt08_s5_o3     Int?
+  temperature    Float?
+  relative_humidity   Float?
+  absolute_humidity   Float?
 }
