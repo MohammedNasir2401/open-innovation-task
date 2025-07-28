@@ -1,0 +1,31 @@
+export const airQualityOptions = [
+    { value: "co_gt", label: "CO (mg/m³)" },
+    { value: "pt08_s1_co", label: "Sensor 1 (CO)" },
+    { value: "nmhc_gt", label: "NMHC (μg/m³)" },
+    { value: "c6h6_gt", label: "C6H6 (μg/m³)" },
+    { value: "pt08_s2_nmhc", label: "Sensor 2 (NMHC)" },
+    { value: "nox_gt", label: "NOx (ppb)" },
+    { value: "pt08_s3_nox", label: "Sensor 3 (NOx)" },
+    { value: "no2_gt", label: "NO2 (μg/m³)" },
+    { value: "pt08_s4_no2", label: "Sensor 4 (NO2)" },
+    { value: "pt08_s5_o3", label: "Sensor 5 (O3)" },
+    { value: "temperature", label: "Temperature (°C)" },
+    { value: "relative_humidity", label: "Relative Humidity (%)" },
+    { value: "absolute_humidity", label: "Absolute Humidity (g/m³)" },
+];
+
+export const unitMap = {
+    co_gt: "mg/m³",
+    pt08_s1_co: "mg/m³",
+    nmhc_gt: "μg/m³",
+    c6h6_gt: "μg/m³",
+    pt08_s2_nmhc: "μg/m³",
+    nox_gt: "ppb",
+    pt08_s3_nox: "ppb",
+    no2_gt: "μg/m³",
+    pt08_s4_no2: "μg/m³",
+    pt08_s5_o3: "μg/m³",
+    temperature: "°C",
+    relative_humidity: "%",
+    absolute_humidity: "g/m³",
+};
